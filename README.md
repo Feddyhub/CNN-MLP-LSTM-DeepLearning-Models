@@ -1,4 +1,4 @@
-## Bu repo'da yaptiklarimi neden yaptigimi @fedai1882 kanalina video ile anlatacagim
+
 
 # Ne yaptim
 
