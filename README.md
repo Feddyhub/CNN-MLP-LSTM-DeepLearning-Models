@@ -1,6 +1,7 @@
 
 
-# Ne yaptim
+# Forecast degil Predict yaptim.
+### Ne yaptim ne oldu ?
 
 1-elimizdeki veriyi 90 10 olarak boldum.
 2-targeti belirledim ve lag fonksiyonu olsusturarak rastgele adet lag olusturdum (4)
