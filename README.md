@@ -1,6 +1,6 @@
 
 
-# Forecast degil Predict yaptim.
+# Predict.
 ### Ne yaptim ne oldu ?
 
 1-elimizdeki veriyi 90 10 olarak boldum.
