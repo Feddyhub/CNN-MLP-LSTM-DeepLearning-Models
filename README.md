@@ -1,14 +1,28 @@
+## 🔮 Modelleme & Tahmin Süreci
 
+### 📌 Ne Yaptım, Ne Oldu?
 
-# Predict.
-### Ne yaptim ne oldu ?
+1. **Veri Bölme:**  
+   Elimizdeki veri setini **%90 eğitim** ve **%10 test** olacak şekilde böldüm. Bu sayede modelin performansını görmediği veriler üzerinde değerlendirebildim.
 
-1-elimizdeki veriyi 90 10 olarak boldum.
-2-targeti belirledim ve lag fonksiyonu olsusturarak rastgele adet lag olusturdum (4)
-3-sonrasinda CNN modeli kurdum ve soruda bunu fonksiyon ile cagirilabilir olmasi isteniyordu,duzenledim.
-4-CNN modeli kurulmus veriye daha once hic gormedigi y_test verisi kadar forecast yapmasini istedim
-## kritik nokta
-#### Aslinda forecast ileriyi tahminlemek demektir biz modelimize hicbir zaman y_test gostermedigimiz icin len(y_test) kadar tahmin yapinca aslinda klasik tahminlemeye donuyor.
-ve biz bunu mse gibi metricslerle dogruluk oranini olcuyoruz.
-# CNN VE LSTM'de verileri tensor olarak koymaliyiz 3D olmali
-bu ve buna benzer onemli bilgileri detayli sekilde anlatacagim. takipte kalin...
+2. **Hedef Değişken ve Lag Fonksiyonu:**  
+   - Hedef değişkeni (**target**) belirledim.  
+   - Veri setine zaman bağımlılığı kazandırmak için **lag fonksiyonu** oluşturarak rastgele **4 adet lag** ekledim. Bu, modelin geçmiş değerlere bakarak geleceği tahmin etmesini sağladı.
+
+3. **Model Kurulumu (CNN):**  
+   - Convolutional Neural Network (**CNN**) modelini oluşturup eğitim verisi ile eğittim.  
+   - Modeli fonksiyon haline getirerek, gerektiğinde kolayca çağrılabilir ve yeniden kullanılabilir hale getirdim.
+
+4. **Tahmin (Forecast):**  
+   - Eğitilen CNN modeline, **hiç görmediği** `y_test` verisi kadar ileriye yönelik tahmin (**forecast**) yaptırdım.  
+   - Bu aşamada, model **ileri tarihli tahminler** üreterek gerçek dünya kullanım senaryosuna uygun hale getirildi.
+
+---
+
+### ⚖️ Kritik Noktalar: **Predict vs Forecast**
+
+🔍 **Predict:**  
+Modelin eğitildiği veriler ile **aynı zaman aralığındaki** değerleri tahmin etmesidir. Test verisi (`y_test`) kullanılarak klasik doğrulama yapılır ve MSE, RMSE gibi metriklerle performans ölçülür.
+
+🔮 **Forecast:**  
+Modelin **hiç görmediği gelecekteki** verileri tahmin etmesidir. Bu durumda model, geçmiş değerlerden yola çıkarak **ileri tarihler** için tahmin
